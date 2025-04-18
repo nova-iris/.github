@@ -28,8 +28,5 @@ When the security team receives a security bug report, they will assign it to a 
 - Audit code to find any potential similar problems.
 - Prepare fixes for all releases still under maintenance. These fixes will be released as fast as possible.
 
-## Bug bounty
-Unfortunately, SxT doesn't offer a paid bug bounty programme. SxT will make efforts to show appreciation to people who take the time and effort to disclose vulnerabilities responsibly. We do have `an acknowledgements page for legitimate issues found by researchers`.
-
 ## Comments on this Policy
 If you have suggestions on how this process could be improved please submit a pull request.
