@@ -1,33 +1,35 @@
 # Security Policy
 
-## Supported Versions
-
-We release patches for security vulnerabilities in the following versions:
-
-| Version | Supported          |
-| ------- | ------------------ |
-| x.y.z   | :white_check_mark: |
-| < x.y.z | :x:                |
+This is the security notice for all repositories under the Space and Time (SxT) organization. At SxT, we have a centralized security team that manages vulnerabilities across all projects. This team works closely with maintainers and contributors to triage and remediate reported issues promptly. We are committed to maintaining the security and integrity of our open source software.
 
 ## Reporting a Vulnerability
+If you believe you have found a security vulnerability in any Space and Time owned repository, please report it to us through coordinated disclosure.
 
-If you discover a security vulnerability, please do the following:
+**Please do not report security vulnerabilities through public GitHub issues, discussions, or pull requests.**
 
-1. **Do not disclose it publicly.**
-2. Email us at [security@example.com](mailto:security@example.com) with a detailed description of the issue.
-3. Include steps to reproduce the vulnerability, if possible.
+Instead, please send an email to opensource-security@github.com.
 
-We will acknowledge your report within **48 hours** and provide a timeline for a fix. We appreciate your help in keeping this project secure.
+Please include as much of the information listed below as you can to help us better understand and resolve the issue:
 
-# Vulnerability Reporting
+- The type of issue (e.g., buffer overflow, SQL injection, or cross-site scripting)
+- Full paths of source file(s) related to the manifestation of the issue
+- The location of the affected source code (tag/branch/commit or direct URL)
+- Any special configuration required to reproduce the issue
+- Step-by-step instructions to reproduce the issue
+- Proof-of-concept or exploit code (if possible)
+- Impact of the issue, including how an attacker might exploit the issue
 
-Please report potential vulnerabilities to: **security@example.org**
+This information will help us triage your report more quickly.
 
-Provide as much detail as possible, including:
-- Affected repository and version
-- Steps to reproduce
-- Impact assessment
+## Disclosure Policy
+When the security team receives a security bug report, they will assign it to a primary handler. This person will coordinate the fix and release process, involving the following steps:
 
-We will acknowledge your report, investigate, and let you know the result as soon as we can.
+- Confirm the problem and determine the affected versions.
+- Audit code to find any potential similar problems.
+- Prepare fixes for all releases still under maintenance. These fixes will be released as fast as possible.
 
-We appreciate responsible disclosure.
+## Bug bounty
+Unfortunately, SxT doesn't offer a paid bug bounty programme. SxT will make efforts to show appreciation to people who take the time and effort to disclose vulnerabilities responsibly. We do have `an acknowledgements page for legitimate issues found by researchers`.
+
+## Comments on this Policy
+If you have suggestions on how this process could be improved please submit a pull request.
