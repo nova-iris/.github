@@ -12,7 +12,6 @@ The following guideline is heavily based on the [Angular Project Guideline](http
    - [Submitting a Pull Request (PR)](#submit-pr)
    - [Addressing review feedback](#address-review)
    - [Updating the commit message](#updating-commit-message)
-   - [Running Code Coverage Locally](#coverage-locally)
    - [After your pull request is merged](#after-pr-merged)
  - [Coding Rules](#rules)
  - [Commit Message Guidelines](#commit-guidelines)
@@ -69,9 +68,9 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 3. Follow our [Coding Rules](#rules).
 
-4. Run the entire test suite to ensure tests are passing.
+4. <a name="test-suite"></a>Run the entire test suite to ensure tests are passing.
 
-5. When applicable, run the code quality checks locally so that the code is not only correct but also clean.
+5. <a name="code-quality-checks"></a>When applicable, run the code quality checks locally so that the code is not only correct but also clean.
 
 6. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
@@ -93,7 +92,7 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
     Our proof of SQL repository triggers automatically a workflow to test the code whenever a Pull Request is submitted or a commit is pushed to an existing PR. Before closing the PR, always verify that those tests are indeed passing.
 
-    NOTE: **We will not review a PR if CI (except for `Check Approver` since this requires a review) doesn't pass. We are happy to help you if you can't figure out how to get the CI to pass but it is your responsibility to make sure they pass.**
+    NOTE: <a name="ci-review-note"></a>**We will not review a PR if CI (except for `Check Approver` since this requires a review) doesn't pass. We are happy to help you if you can't figure out how to get the CI to pass but it is your responsibility to make sure they pass.**
 
     Also, to ease this process of using git, you can try to use [vscode](https://code.visualstudio.com/). Vscode has some nice extensions to manage your git workflow.
 
@@ -151,13 +150,6 @@ In order to update the commit message of the last commit on your branch:
 
 NOTE: If you need to update the commit message of an earlier commit, you can use `git rebase` in interactive mode. See the [git docs](https://git-scm.com/docs/git-rebase#_interactive_mode) for more details.
 
-### <a name="coverage-locally"></a> Running Code Coverage Locally 
-To run code coverage locally, install `cargo-llvm-cov` by following the instructions here: [cargo-llvm-cov Installation](https://github.com/taiki-e/cargo-llvm-cov).
-
-For users of VSCode, you can display coverage reports directly in the IDE by following these instructions: [Display Coverage in VSCode](https://github.com/taiki-e/cargo-llvm-cov?tab=readme-ov-file#display-coverage-in-vs-code).
-
-You can exclude specific functions from coverage by adding an attribute to your code: [Exclude Functions from Coverage](https://github.com/taiki-e/cargo-llvm-cov?tab=readme-ov-file#exclude-function-from-coverage).
-
 ### <a name="after-pr-merged"></a> After your pull request is merged
 
 After your pull request is merged, you can safely delete your branch and pull the changes from the main (upstream) repository:
@@ -190,7 +182,7 @@ After your pull request is merged, you can safely delete your branch and pull th
 To ensure consistency throughout the source code, keep these rules in mind as you are working:
 
 * All features or bug fixes **must be tested** by one or more specs (unit-tests). 
-* All public API methods **must be documented**. We follow the rust documentation style (see [here](https://doc.rust-lang.org/cargo/commands/cargo-doc.html)).
+* All public API methods **must be documented**.
 
 ## <a name="commit-guidelines"></a> Commit Message Guidelines
 
