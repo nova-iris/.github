@@ -1,8 +1,11 @@
-# Contributing to Our Repository
+<h1 align="center" style="border-bottom: none;">Contributing to our Repository</h1>
+<p align="center">
+  <a href="https://www.conventionalcommits.org/en/v1.0.0/">
+    <img alt="semantic-release: conventional-commits" src="https://img.shields.io/badge/semantic--release-conventional--commits-blueviolet">
+  </a>
+</p>
 
-[![Semantic Release: Conventional Commits](https://img.shields.io/badge/semantic--release-conventional--commits-blueviolet)](https://www.conventionalcommits.org/en/v1.0.0/)
-
-This guideline is heavily inspired by the [Angular Project Guideline](https://github.com/angular/angular/blob/main/CONTRIBUTING.md). We welcome contributions and appreciate your efforts to improve the project. Please follow the guidelines below to ensure a smooth contribution process.
+This guideline is inspired by the [Angular Project Guideline](https://github.com/angular/angular/blob/main/CONTRIBUTING.md). We welcome contributions and appreciate your efforts to improve the project. Please follow the guidelines below to ensure a smooth contribution process.
 
 ## Table of Contents
 - [Notice](#notice)
@@ -13,6 +16,7 @@ This guideline is heavily inspired by the [Angular Project Guideline](https://gi
   - [After Your Pull Request is Merged](#after-your-pull-request-is-merged)
 - [Coding Rules](#coding-rules)
 - [Commit Message Guidelines](#commit-message-guidelines)
+  - [Semantic Versioning](#semantic-versioning)
   - [Commit Message Format](#commit-message-format)
   - [Revert Commits](#revert-commits)
   - [Commit Examples](#commit-examples)
@@ -139,8 +143,14 @@ To ensure consistency across the project:
 ---
 
 ## Commit Message Guidelines
+### Semantic Versioning
+To version the code, the repository follows [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) using the scheme MAJOR.MINOR.PATCH:
 
-We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for clear and consistent commit messages.
+1. MAJOR: Incremented for incompatible API changes.
+2. MINOR: Incremented for backwards-compatible new features.
+3. PATCH: Incremented for backwards-compatible bug fixes.
+
+For instance, version 1.1.3 indicates the first major version, first minor version, and the third patch version. When incompatible changes are introduced, the version increments to the next major version.
 
 ### Commit Message Format
 
@@ -169,7 +179,21 @@ We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) fo
 | `test`      | Adding or updating tests                | None           |
 | `chore`     | Maintenance tasks (e.g., deps updates)  | None           |
 
-#### Footer Examples
+
+**Tips**
+- Keep commits focused — don’t mix unrelated changes.
+- If adding a feature and related tests, use separate commits:
+    ```
+    feat: add user registration endpoint
+    test: add tests for registration flow
+    ```
+    
+#### Body (Optional)
+- Use present tense: “fix” not “fixed”
+- Explain the reason for the change and context
+- Compare previous vs. new behavior if helpful
+
+#### Footer (Optional)
 - Breaking changes:
    ```
    BREAKING CHANGE: changed response format in /v1/login
