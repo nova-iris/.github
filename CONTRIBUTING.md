@@ -300,13 +300,13 @@ The content of the commit message body should contain:
 
 ## <a name="commit-examples"></a>Commit Examples
 
-### Commit message with ! to draw attention to breaking change
+Commit message with ! to draw attention to breaking change
 
 ```
 feat!: send an email to the customer when a product is shipped
 ```
 
-### Commit message with both ! and BREAKING CHANGE footer
+Commit message with both ! and BREAKING CHANGE footer
 
 ```
 chore!: drop support for Node 6
@@ -314,7 +314,7 @@ chore!: drop support for Node 6
 BREAKING CHANGE: use JavaScript features not available in Node 6.
 ```
 
-### Commit message with description and breaking change in the footer
+Commit message with description and breaking change in the footer
 
 ```
 feat: allow provided config object to extend other configs
@@ -322,13 +322,13 @@ feat: allow provided config object to extend other configs
 BREAKING CHANGE: `extends` key in config file is now used for extending other config files
 ```
 
-### Commit message with no body
+Commit message with no body
 
 ```
 docs: correct spelling of CHANGELOG
 ```
 
-### Commit message for a fix using an (optional) issue number.
+Commit message for a fix using an (optional) issue number.
 
 ```
 fix: minor typos in code
