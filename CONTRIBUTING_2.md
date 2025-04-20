@@ -208,15 +208,21 @@ For instance, version 1.1.3 indicates the first major version, first minor versi
 
 ---
 
-### Revert Commits
+### <a name="revert"></a>Revert commits
 
-To revert a commit:
-```
-revert: <original commit header>
+If the commit reverts a previous commit, it should begin with `revert:`
+- Header:
+    ```
+    revert: <original commit header>
+    ```
+- The content of the commit message body should contain:
+    - information about the SHA of the commit being reverted
+    - a clear description of the reason for reverting the commit message.
 
-This reverts commit <SHA>.
-Reason: <why it was reverted>.
-```
+    ```
+    This reverts commit <SHA>.
+    Reason: <why it was reverted>
+    ```
 
 ---
 
