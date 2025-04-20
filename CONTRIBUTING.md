@@ -230,7 +230,7 @@ The `footer` is optional. The [Commit Message Footer](#commit-footer) format des
   |           |
   |           |
   |           |
-  │           └─⫸ Summary in present tense. Not capitalized. No period at the end.
+  │           └─⫸ Summary in present tense. A succinct description of the change (less than 80 characters). Not capitalized. No period at the end.
   │
   │
   └─⫸ Commit Type: feat|feat!|fix|fix!|perf|perf!|refactor|refactor!|test|bench|build|ci|docs|style|chore
@@ -259,14 +259,6 @@ Must be one of the following:
 * **chore**: Regular code maintenance (this does not correlate with any semantic versioning update).
 
 Try to not fill your commit with many unrelated changes to your code, as it makes the process of review more difficult. For instance, if you add a feature and tests to validate your feature, try to commit your code as two messages, one for the feature implementation ("feat: add feature x") and another for the test addition ("test: add tests to validate feature x").
-
-#### <a name="summary"></a>Summary
-
-Use the summary field to provide a succinct description of the change (less than 80 characters):
-
-* use the imperative, present tense: "change", not "changing", nor "changed", and nor "changes"
-* don't capitalize the first letter
-* no dot (.) at the end
 
 ### <a name="commit-body"></a>Commit Message Body
 
