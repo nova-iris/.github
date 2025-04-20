@@ -198,23 +198,29 @@ For instance: "1.1.3" is a program that is in the first major and minor version 
 
 ### <a name="commit"></a> Commit Message Format
 
-*This specification is inspired by and supersedes the
-[Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).*
+We follow a strict commit message format inspired by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).. This improves readability, automates semantic versioning, and keeps history clean.
 
-We have very precise rules over how our Git commit messages must be formatted.
-This format leads to **easier to read commit history** and also smooths our **automatic semantic versioning**.
-
-Each commit message consists of a **header**, a **body**, and a **footer**.
+**Commit format:**
 
 ```
-<header>
+<type>[!]: <short summary>
 <BLANK LINE>
 <optional body>
 <BLANK LINE>
 <optional footer>
 ```
 
-The `header` is mandatory and must conform to the [Commit Message Header](#commit-header) format.
+**Header (Required)**
+- `<type>`: Commit type (see list below).
+- Add `!` after `<type>` for **a breaking changes**
+- `<summary>`: Short description:
+    - Present tense (e.g., "add", not "added")
+    - Less than 80 characters
+    - No capitalization or period
+
+**Types**
+
+
 
 The `body` is optional for all commits.
 When the body is present it must conform to the [Commit Message Body](#commit-body) format.
@@ -242,53 +248,63 @@ Both `<type>` and `<summary>` fields are mandatory. `Type` must always be follow
 
 Must be one of the following:
 
-* **feat**: a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
-* **feat!**: a commit of the type feat introduces a new feature to the codebase and introduces breaking changes (this correlates with MAJOR in Semantic Versioning).
-* **fix**: a commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
-* **fix!**: a commit of the type fix a bug in your codebase and introduces breaking changes (this correlates with MAJOR in Semantic Versioning).
-* **perf**: A code change that improves performance (this correlates with a PATCH in Semantic Versioning).
-* **perf!**: A code change that improves performance and introduces breaking changes (this correlates with MAJOR in Semantic Versioning).
-* **refactor**: A code change that neither fixes a bug nor adds a feature (this correlates with a PATCH in Semantic Versioning).
-* **refactor!**: A code change that neither fixes a bug nor adds a feature and introduces breaking changes (this correlates with MAJOR in Semantic Versioning).
-* **test**: Adding missing tests or correcting existing tests
-* **bench**: Adding missing benchmarks or correcting existing benchmarks (this does not correlate with any semantic versioning update).
-* **build**: Changes that affect the build system or external dependencies (this correlates with a PATCH in Semantic Versioning).
-* **ci**: Changes to our CI configuration files and scripts.
-* **docs**: Documentation only changes (this correlates with a PATCH in Semantic Versioning).
-* **style**: Feature and updates related to styling (this does not correlate with any semantic versioning update).
-* **chore**: Regular code maintenance (this does not correlate with any semantic versioning update).
+Type | Description | SemVer Impact
+feat | Introduces a new feature | MINOR
+feat! | New feature with breaking changes | MAJOR
+fix | Patches a bug | PATCH
+fix! | Bug fix with breaking changes | MAJOR
+perf | Improves performance without changing behavior | PATCH
+perf! | Performance improvement with breaking changes | MAJOR
+refactor | Code change that doesn't fix bugs or add features | PATCH
+refactor! | Refactoring with breaking changes | MAJOR
+test | Adds or updates tests | None
+bench | Adds or updates benchmarks | None
+build | Changes to build system or dependencies (e.g., Makefile, package.json) | PATCH
+ci | CI config or automation (e.g., GitHub Actions, Travis) | None
+docs | Documentation changes only | PATCH
+style | Formatting, whitespace, missing semicolons, etc. (no code changes) | None
+chore | Routine maintenance (e.g., version bumps, cleanup) | None
 
-Try to not fill your commit with many unrelated changes to your code, as it makes the process of review more difficult. For instance, if you add a feature and tests to validate your feature, try to commit your code as two messages, one for the feature implementation ("feat: add feature x") and another for the test addition ("test: add tests to validate feature x").
+**Tips**
+- Keep commits focused — don’t mix unrelated changes.
+- If adding a feature and related tests, use separate commits:
+    ```
+    feat: add user registration endpoint
+    test: add tests for registration flow
+    ```
 
-### <a name="commit-body"></a>Commit Message Body
+**Body (Optional)**
+- Use present tense: “fix” not “fixed”
+- Explain the reason for the change and context
+- Compare previous vs. new behavior if helpful
 
-Just as in the summary, use the imperative, present tense: "fix", not "fixed", nor "fixes", neither "fixing".
+**Footer (Optional)**
+Use for:
+- Breaking changes or deprecations:
+    ```
+    BREAKING CHANGE: changed response format in /v1/login
+    ```
 
-Explain the motivation for the change in the commit message body. This commit message should explain _why_ you are making the change.
-You can include a comparison of the previous behavior with the new behavior in order to illustrate the impact of the change.
-
-### <a name="commit-footer"></a>Commit Message Footer
-
-The footer can contain information about breaking changes and deprecations and is also the place to reference GitHub issues and other PRs that this commit closes or is related to. For example:
-
-```
-<feat | perf | fix>: <change summary>
-<BLANK LINE>
-<breaking change description + migration instructions>
-<BLANK LINE>
-BREAKING CHANGE: Fixes #<issue number>
-```
-
-Breaking Change section must always be at the message footer.
+- Issue references:
+    ```
+    Closes #123
+    ```
 
 ### <a name="revert"></a>Revert commits
 
-If the commit reverts a previous commit, it should begin with `revert: `, followed by the header of the reverted commit.
+If the commit reverts a previous commit, it should begin with `revert:`
+- Header:
+    ```
+    revert: <original commit header>
+    ```
+- The content of the commit message body should contain:
+    - information about the SHA of the commit being reverted
+    - a clear description of the reason for reverting the commit message.
 
-The content of the commit message body should contain:
-
-- information about the SHA of the commit being reverted in the following format: `This reverts commit <SHA>`,
-- a clear description of the reason for reverting the commit message.
+    ```
+    This reverts commit <SHA>.
+    Reason: <why it was reverted>
+    ```
 
 ## <a name="commit-examples"></a>Commit Examples
 
