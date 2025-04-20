@@ -16,11 +16,6 @@ The following guideline is heavily based on the [Angular Project Guideline](http
  - [Coding Rules](#rules)
  - [Commit Message Guidelines](#commit-guidelines)
    - [Commit Message Format](#commit)
-   - [Commit Message Header](#commit-message-header)
-     - [Type](#type)
-     - [Summary](#summary)
-   - [Commit Message Body](#commit-message-body)
-   - [Commit Message Footer](#commit-message-footer)
    - [Revert Commits](#revert)
    - [Commit Examples](#commit-examples)
    - [Automatic Semantic Release](#semantic-release)
@@ -200,7 +195,7 @@ For instance: "1.1.3" is a program that is in the first major and minor version 
 
 We follow a strict commit message format inspired by [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).. This improves readability, automates semantic versioning, and keeps history clean.
 
-**Commit format:**
+#### **Commit format:**
 
 ```
 <type>[!]: <short summary>
@@ -210,7 +205,7 @@ We follow a strict commit message format inspired by [Conventional Commits](http
 <optional footer>
 ```
 
-**Header (Required)**
+#### **Header (Required)**
 - `<type>`: Commit type (see list below).
 - Add `!` after `<type>` for **a breaking changes**
 - `<summary>`: Short description:
@@ -240,7 +235,6 @@ Each commit must use one of the following types:
 | `style`     | Code formatting, whitespace, etc. (no logic change)                         | None           |
 | `chore`     | Routine tasks like dependency updates, cleanup                              | None           |
 
-
 **Tips**
 - Keep commits focused — don’t mix unrelated changes.
 - If adding a feature and related tests, use separate commits:
@@ -249,12 +243,12 @@ Each commit must use one of the following types:
     test: add tests for registration flow
     ```
 
-**Body (Optional)**
+#### **Body (Optional)**
 - Use present tense: “fix” not “fixed”
 - Explain the reason for the change and context
 - Compare previous vs. new behavior if helpful
 
-**Footer (Optional)**
+#### **Footer (Optional)**
 Use for:
 - Breaking changes or deprecations:
     ```
