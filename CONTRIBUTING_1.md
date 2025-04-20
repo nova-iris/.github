@@ -120,7 +120,7 @@ If we ask for changes via code reviews then:
 
 5. In order to ensure that we do not pollute the main branch with poorly written commit messages, before the PR can be merged, we require that the commits in your branch be clean. In particular, this means that you should rebase instead of merge in order to catch up to main. Additionally, any commits of the variety `address review comments` should be turned into a fixup commit instead.
 
-### <a name="updating-commit-message"></a> Updating the commit message
+### <a name="updating-commit-message"></a> Updating Commit Message
 
 A reviewer might often suggest changes to a commit message (for example, to add more context for a change or adhere to our [commit message guidelines](#commit)).
 In order to update the commit message of the last commit on your branch:
