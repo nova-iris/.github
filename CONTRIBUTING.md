@@ -37,7 +37,7 @@ The general flow you can follow when implementing a new feature/bugfix/docs/test
 
 1. Create a GitHub issue to keep track of the task you are implementing.
  
-The most relevant fields in the issue are: `assignees`, `projects`, `milestone`, `development`, and `description`. Those fields are not mandatory, but they may help in the future to easily fetch information related to a specific feature, such as the time it took from implementation until completeness, and which PRs are associated with which feature (many PRs can be related to a single feature/issue).
+    The most relevant fields in the issue are: `assignees`, `projects`, `milestone`, `development`, and `description`. Those fields are not mandatory, but they may help in the future to easily fetch information related to a specific feature, such as the time it took from implementation until completeness, and which PRs are associated with which feature (many PRs can be related to a single feature/issue).
 
 2. From the created issue panel, use the `main` branch to generate a new branch that will be tied with the issue. In this case, when a Pull Request tied with the branch is merged, the issue will be automatically closed.
 
@@ -53,17 +53,17 @@ Before you submit your Pull Request (PR) consider the following guidelines:
 
 1. Make your changes in a new git branch:
 
-In case you haven't generated a new branch yet, use the following command to create a new branch from the main:
+    In case you haven't generated a new branch yet, use the following command to create a new branch from the main:
 
-```bash
-git checkout -b my-feature-branch main
-```
-   
-Otherwise, only checkout your branch:
+    ```bash
+    git checkout -b my-feature-branch main
+    ```
+    
+    Otherwise, only checkout your branch:
 
-```bash
-git checkout my-feature-branch
-```
+    ```bash
+    git checkout my-feature-branch
+    ```
 
 2. Create your patch, **including appropriate test cases**.
 
@@ -75,27 +75,27 @@ git checkout my-feature-branch
 
 6. Commit your changes using a descriptive commit message that follows our [commit message conventions](#commit). Adherence to these conventions is necessary because release notes are automatically generated from these messages.
 
-```bash
-git add <modified files>
-git commit
-```
+    ```bash
+    git add <modified files>
+    git commit
+    ```
 
-Note: Only add relevant files. Avoid adding binary files, as they frequently waste storage resources. Consider adding only text files (.rs, .cc, .json, .toml, etc). Files that should NOT be committed should instead be added
-to `.gitignore`.
+    Note: Only add relevant files. Avoid adding binary files, as they frequently waste storage resources. Consider adding only text files (.rs, .cc, .json, .toml, etc). Files that should NOT be committed should instead be added
+    to `.gitignore`.
 
 7.  Push your branch to GitHub:
 
-```bash
-git push origin my-feature-branch
-```
+    ```bash
+    git push origin my-feature-branch
+    ```
 
 8.  In GitHub, send a pull request to `sxt-proof-of-sql:main`.
 
-Our proof of SQL repository triggers automatically a workflow to test the code whenever a Pull Request is submitted or a commit is pushed to an existing PR. Before closing the PR, always verify that those tests are indeed passing.
+    Our proof of SQL repository triggers automatically a workflow to test the code whenever a Pull Request is submitted or a commit is pushed to an existing PR. Before closing the PR, always verify that those tests are indeed passing.
 
-NOTE: **We will not review a PR if CI (except for `Check Approver` since this requires a review) doesn't pass. We are happy to help you if you can't figure out how to get the CI to pass but it is your responsibility to make sure they pass.**
+    NOTE: **We will not review a PR if CI (except for `Check Approver` since this requires a review) doesn't pass. We are happy to help you if you can't figure out how to get the CI to pass but it is your responsibility to make sure they pass.**
 
-Also, to ease this process of using git, you can try to use [vscode](https://code.visualstudio.com/). Vscode has some nice extensions to manage your git workflow.
+    Also, to ease this process of using git, you can try to use [vscode](https://code.visualstudio.com/). Vscode has some nice extensions to manage your git workflow.
 
 ### <a name="address-review"></a> Addressing review feedback
 
