@@ -218,52 +218,28 @@ We follow a strict commit message format inspired by [Conventional Commits](http
     - Less than 80 characters
     - No capitalization or period
 
-**Types**
+**Commit Types**
 
+Each commit must use one of the following types:
 
+| Type        | Description                                                                 | SemVer Impact |
+|-------------|-----------------------------------------------------------------------------|----------------|
+| `feat`      | Introduces a new feature                                                    | MINOR          |
+| `feat!`     | New feature with breaking changes                                           | MAJOR          |
+| `fix`       | Patches a bug                                                               | PATCH          |
+| `fix!`      | Bug fix with breaking changes                                               | MAJOR          |
+| `perf`      | Improves performance without behavior change                                | PATCH          |
+| `perf!`     | Performance improvement with breaking changes                               | MAJOR          |
+| `refactor`  | Code change that doesn't fix bugs or add features                           | PATCH          |
+| `refactor!` | Refactoring with breaking changes                                           | MAJOR          |
+| `test`      | Adds or updates tests                                                       | None           |
+| `bench`     | Adds or updates benchmarks                                                  | None           |
+| `build`     | Changes to build system or dependencies                                     | PATCH          |
+| `ci`        | CI configuration or scripts                                                 | None           |
+| `docs`      | Documentation changes only                                                  | PATCH          |
+| `style`     | Code formatting, whitespace, etc. (no logic change)                         | None           |
+| `chore`     | Routine tasks like dependency updates, cleanup                              | None           |
 
-The `body` is optional for all commits.
-When the body is present it must conform to the [Commit Message Body](#commit-body) format.
-
-The `footer` is optional. The [Commit Message Footer](#commit-footer) format describes what the footer is used for and the structure it must have.
-
-
-#### <a name="commit-header"></a>Commit Message Header
-
-```
-<type>: <short summary>
-  │           │
-  |           |
-  |           |
-  |           |
-  │           └─⫸ Summary in present tense. A succinct description of the change (less than 80 characters). Not capitalized. No period at the end.
-  │
-  │
-  └─⫸ Commit Type: feat|feat!|fix|fix!|perf|perf!|refactor|refactor!|test|bench|build|ci|docs|style|chore
-```
-
-Both `<type>` and `<summary>` fields are mandatory. `Type` must always be followed by a `:`, a space, then the `summary`. Optionally, you can add a `!` before the `:` so that the release analyzer can be aware of a breaking change, thus allowing the bump of the major version.
-
-#### <a name="type"></a> Type
-
-Must be one of the following:
-
-Type | Description | SemVer Impact
-feat | Introduces a new feature | MINOR
-feat! | New feature with breaking changes | MAJOR
-fix | Patches a bug | PATCH
-fix! | Bug fix with breaking changes | MAJOR
-perf | Improves performance without changing behavior | PATCH
-perf! | Performance improvement with breaking changes | MAJOR
-refactor | Code change that doesn't fix bugs or add features | PATCH
-refactor! | Refactoring with breaking changes | MAJOR
-test | Adds or updates tests | None
-bench | Adds or updates benchmarks | None
-build | Changes to build system or dependencies (e.g., Makefile, package.json) | PATCH
-ci | CI config or automation (e.g., GitHub Actions, Travis) | None
-docs | Documentation changes only | PATCH
-style | Formatting, whitespace, missing semicolons, etc. (no code changes) | None
-chore | Routine maintenance (e.g., version bumps, cleanup) | None
 
 **Tips**
 - Keep commits focused — don’t mix unrelated changes.
