@@ -168,16 +168,19 @@ For instance, version 1.1.3 indicates the first major version, first minor versi
 - `<summary>`: Short description (max 80 characters).
 
 #### Commit Types
-| Type        | Description                              | Impact         |
-|-------------|------------------------------------------|----------------|
-| `feat`      | New feature                              | MINOR          |
-| `fix`       | Bug fix                                  | PATCH          |
-| `docs`      | Documentation changes                   | None           |
-| `style`     | Code formatting (no logic change)        | None           |
-| `refactor`  | Code changes without new features/bugs   | PATCH          |
-| `perf`      | Performance improvement                  | PATCH          |
-| `test`      | Adding or updating tests                | None           |
-| `chore`     | Maintenance tasks (e.g., deps updates)  | None           |
+| Type        | Description                                                                 | SemVer Impact |
+|-------------|-----------------------------------------------------------------------------|----------------|
+| `feat`      | Introduces a new feature                                                    | MINOR          |
+| `fix`       | Patches a bug                                                               | PATCH          |
+| `perf`      | Improves performance without behavior change                                | PATCH          |
+| `refactor`  | Code change that doesn't fix bugs or add features                           | PATCH          |
+| `test`      | Adds or updates tests                                                       | None           |
+| `bench`     | Adds or updates benchmarks                                                  | None           |
+| `build`     | Changes to build system or dependencies                                     | PATCH          |
+| `ci`        | CI configuration or scripts                                                 | None           |
+| `docs`      | Documentation changes only                                                  | PATCH          |
+| `style`     | Code formatting, whitespace, etc. (no logic change)                         | None           |
+| `chore`     | Routine tasks like dependency updates, cleanup                              | None           |
 
 
 **Tips**
